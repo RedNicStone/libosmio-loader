@@ -1,3 +1,6 @@
 [submodule "external/libosmio-headers"]
 	path = external/libosmio-headers
 	url = https://github.com/RedNicStone/libosmio-headers
+[submodule "platform/unix/lib/jsoncpp"]
+	path = platform/unix/lib/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp

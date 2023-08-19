@@ -1,0 +1,17 @@
+
+macro(SUBDIRLIST result curdir)
+    file(GLOB children RELATIVE ${curdir} ${curdir}/*)
+    set(dirlist "")
+    foreach(child ${children})
+        if(IS_DIRECTORY ${curdir}/${child})
+            list(APPEND dirlist ${child})
+        endif()
+    endforeach ()
+    set(${result} ${dirlist})
+endmacro()
+
+SUBDIRLIST(SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR})
+
+foreach (SUBDIR ${SUBDIRS})
+    CREATE_TEST(${SUBDIR})
+endforeach ()
